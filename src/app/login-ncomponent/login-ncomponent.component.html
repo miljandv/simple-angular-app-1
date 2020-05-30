@@ -1,0 +1,25 @@
+<form autocomplete="off">
+
+<h4>Ime  <input id="ime" name="ime" class="form-control" minlength="2" [(ngModel)]="tren_korisnik.ime" #ime= "ngModel"
+    type="text" required></h4>
+ <div *ngIf="ime.invalid && (ime.dirty || ime.touched)" class="alert alert-danger">
+   <div *ngIf="ime.errors.required">
+     Ime je obavezno polje
+   </div> 
+ </div>
+ 
+ <h4>Sifra  <input name="sifra" id="Sifra" sifra="sifra" class="form-control" type="password" #sifra="ngModel" 
+  [(ngModel)]="tren_korisnik.sifra" required></h4>
+ <h4>Zubar?  <input name="zubar" type="checkbox" id="Zubar" [(ngModel)]="tren_korisnik.zubar" ></h4>
+ <button (click)="onSubmit()">Prijava</button>
+</form>
+{{Errors}}
+
+
+
+
+<select name="kk" [(ngModel)]="kk">
+  <option *ngFor="let k in types" value="abc">
+  {{k}}
+  </option>
+</select>
